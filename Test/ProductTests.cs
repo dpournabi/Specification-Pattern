@@ -15,7 +15,6 @@ public class ProductTests : IClassFixture<DbContextFixture>
     [Fact]
     public void SampleIntegrationTest()
     {
-        // This test uses the shared DbContext fixture
         // Arrange
         var product = new Product { Name = "Test", IsActive = true };
 
