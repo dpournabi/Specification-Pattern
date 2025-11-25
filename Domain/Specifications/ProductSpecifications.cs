@@ -37,6 +37,50 @@ public class ProductsWithPaginationSpecification : BaseSpecification<Product>
     }
 }
 
+public class ProductsWithPaginationWithSortSpecification : BaseSpecification<Product>
+{
+    public ProductsWithPaginationWithSortSpecification(int pageNumber, int pageSize, string? sortBy = null, bool sortDescending = false)
+        : base(p => p.IsActive)
+    {
+        ApplyPaging((pageNumber - 1) * pageSize, pageSize);
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            switch (sortBy.ToLower())
+            {
+                case "name":
+                    if (sortDescending)
+                        ApplyOrderByDescending(p => p.Name);
+                    else
+                        ApplyOrderBy(p => p.Name);
+                    break;
+                case "price":
+                    if (sortDescending)
+                        ApplyOrderByDescending(p => p.Price);
+                    else
+                        ApplyOrderBy(p => p.Price);
+                    break;
+                case "stock":
+                    if (sortDescending)
+                        ApplyOrderByDescending(p => p.Stock);
+                    else
+                        ApplyOrderBy(p => p.Stock);
+                    break;
+                default:
+                    if (sortDescending)
+                        ApplyOrderByDescending(p => p.CreatedAt);
+                    else
+                        ApplyOrderBy(p => p.CreatedAt);
+                    break;
+            }
+        }
+        else
+        {
+            ApplyOrderByDescending(p => p.CreatedAt);
+        }
+    }
+}
+
 public class ProductsByNameSpecification : BaseSpecification<Product>
 {
     public ProductsByNameSpecification(string name)
