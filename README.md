@@ -292,18 +292,18 @@ public async Task Handle_WithValidId_ShouldReturnProduct()
 
 # 🆚 Specification Pattern vs. Repository + Unit of Work
 
-<p> Feature                            Repository+UoW   Specification Pattern
-   ---------------------------------- ---------------- ----------------------- <br>
-   Avoids method explosion            ❌ No            ✔ Yes <br>
-   Encapsulates business rules        ❌ No            ✔ Yes <br>
-   Composable (AND/OR/NOT)            ❌ No            ✔ Yes <br>
-   EF Core integration                ✔ Good           ✔ Excellent <br>
-   Testability                        Medium           High <br>
-   Clean architecture alignment       Medium           High <br>
-   Boilerplate code                   High             Low <br>
-   Supports complex dynamic queries   Poor             Excellent <br>
+* Feature                            Repository+UoW   Specification Pattern <br>
+*  ---------------------------------- ---------------- ----------------------- <br>
+*  Avoids method explosion            ❌ No            ✔ Yes <br>
+*  Encapsulates business rules        ❌ No            ✔ Yes <br>
+*  Composable (AND/OR/NOT)            ❌ No            ✔ Yes <br>
+*  EF Core integration                ✔ Good           ✔ Excellent <br>
+*  Testability                        Medium           High <br>
+*  Clean architecture alignment       Medium           High <br>
+*  Boilerplate code                   High             Low <br>
+*  Supports complex dynamic queries   Poor             Excellent <br>
 
------------------------------------------------------------------------- </p>
+------------------------------------------------------------------------ 
 
 # 🏁 Running the Project
 
