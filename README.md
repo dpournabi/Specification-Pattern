@@ -60,7 +60,7 @@ rules into **small reusable objects** called Specifications.
 ### ✔ Encapsulated Business Rules
 
 ``` csharp
-var spec = new ActiveCustomerSpecification();
+var specification = new ActiveProductsSpecification();
 ```
 
 This object **represents** the rule.
