@@ -23,7 +23,8 @@ public class GetProductQueryHandler : IRequestHandler<GetProductQuery, ProductDt
 
     public async Task<ProductDto> Handle(GetProductQuery request, CancellationToken cancellationToken)
     {
-        var specification = new ProductByIdSpecification(request.Id);
+        var specification = new ProductByIdSpecification(request.Id)
+            .And(new ActiveProductsSpecification());
 
         var product = await _context.Products
             .Specify(specification)

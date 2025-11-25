@@ -40,4 +40,21 @@ public abstract class BaseSpecification<T> : ISpecification<T>
         Take = take;
         IsPagingEnabled = true;
     }
+    public ISpecification<T> And(ISpecification<T> other)
+    {
+        var combined = ExpressionComposer.And(this.Criteria, other.Criteria);
+        return new DirectSpecification<T>(combined);
+    }
+
+    public ISpecification<T> Or(ISpecification<T> other)
+    {
+        var combined = ExpressionComposer.Or(this.Criteria, other.Criteria);
+        return new DirectSpecification<T>(combined);
+    }
+
+    public ISpecification<T> Not()
+    {
+        var combined = ExpressionComposer.Not(this.Criteria);
+        return new DirectSpecification<T>(combined);
+    }
 }
