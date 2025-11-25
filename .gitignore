@@ -54,3 +54,5 @@ TestResult.xml
 nunit-*.xml
 /.vs/SpecificationPattern/v17
 /.vs/SpecificationPattern/FileContentIndex
+/.vs/ProjectEvaluation
+/.vs/SpecificationPattern/DesignTimeBuild
